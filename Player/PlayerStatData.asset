@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d92e8299bcd0644a80204c9b2e8475d, type: 3}
+  m_Name: PlayerStatData
+  m_EditorClassIdentifier: 
+  baseStrength: 4
+  baseDexterity: 6
+  baseConstitution: 8
+  baseIntelligence: 14
+  baseWisdom: 6
+  baseCharisma: 3
+  xpCurve: 70
+  experiencePoints: 0
+  level: 1
+  currentStrength: 36
+  currentDexterity: 18
+  currentConstitution: 48
+  currentIntelligence: 168
+  currentWisdom: 36
+  currentCharisma: 6
+  currentHealth: 480
+  maxHealth: 480
+  gems: 44
+  coins: 57
+  activePlayerCards:
+  - {fileID: 11400000, guid: df01fccc46e7abf4989fb8e19157e978, type: 2}
+  activeSpellCards:
+  - {fileID: 11400000, guid: 96cc4a93a44c44248b7a26b6a4d58b76, type: 2}
+  savedLoadoutSpellCards:
+  - {fileID: 11400000, guid: 96cc4a93a44c44248b7a26b6a4d58b76, type: 2}
+  savedLoadoutPlayerCards:
+  - {fileID: 11400000, guid: df01fccc46e7abf4989fb8e19157e978, type: 2}

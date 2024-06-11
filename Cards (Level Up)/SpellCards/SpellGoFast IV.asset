@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba5d78d169f30f47b1e5c7dc14123ba, type: 3}
+  m_Name: SpellGoFast IV
+  m_EditorClassIdentifier: 
+  cardName: Zooom IV
+  rarity: 3
+  addDamage: 0.1
+  addSpeed: 0.1
+  addRange: 0.1
+  damageMultiplier: 0.3
+  speedMultiplier: 0.2
+  rangeMultiplier: 0.1
+  isHoming: 1
+  splitCount: 0
+  modifiedPrefab: {fileID: 188054, guid: acfc696393912ec4d9d387c260264026, type: 3}
+  prerequisite: {fileID: 11400000, guid: f97f547ec07e98e4894dd2edcd19470f, type: 2}
+  incompatibleCards: []

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca25e77a13b8a44e8f0d724eb30c2df, type: 3}
+  m_Name: EnemyStats
+  m_EditorClassIdentifier: 
+  baseStrength: 2
+  baseDexterity: 4
+  baseConstitution: 2
+  baseIntelligence: 9
+  baseWisdom: 6
+  baseExperiencePoints: 3
+  strengthPerLevel: 1
+  dexterityPerLevel: 1
+  constitutionPerLevel: 1
+  intelligencePerLevel: 2
+  wisdomPerLevel: 1
+  experiencePointsPerLevel: 2
+  currentStrength: 2
+  currentDexterity: 4
+  currentConstitution: 3
+  currentIntelligence: 9
+  currentWisdom: 5
+  currentExperiencePoints: 3

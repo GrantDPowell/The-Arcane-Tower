@@ -36,6 +36,7 @@ public class ShopUIManager : MonoBehaviour
             //child.gameObject.SetActive(false);
             //Destroy(child.gameObject);
             // how do i remove the old card item?
+        
         }
 
         // Populate spell cards

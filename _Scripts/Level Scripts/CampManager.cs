@@ -11,6 +11,7 @@ public class CampManager : MonoBehaviour
 
     public List<LevelData> levels;
     public GameObject shopUI;
+    public GameObject notEnoughGemsText;
     public PlayerStats playerStats;
 
     public List<SpellCard> availableSpellCards;
@@ -20,6 +21,7 @@ public class CampManager : MonoBehaviour
     {
         SpawnPlayer();
         CloseShop();
+        HideNotEnoughGemsText();
     }
 
     void SpawnPlayer()
@@ -79,7 +81,11 @@ public class CampManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough gems to buy this card.");
+            //Debug.Log("Not enough gems to buy this card.");
+            // spawn a text that says "Not enough gems to buy this card."
+            ShowNotEnoughGemsText();
+
+
         }
     }
 
@@ -96,7 +102,36 @@ public class CampManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough gems to buy this card.");
+            //Debug.Log("Not enough gems to buy this card.");
+            // spawn a text that says "Not enough gems to buy this card."
+            ShowNotEnoughGemsText();
         }
+    }
+
+    public void ShowNotEnoughGemsText()
+    {
+        if (notEnoughGemsText != null)
+        {
+            notEnoughGemsText.SetActive(true);
+            // wait for 2 seconds
+            
+            // hide the text
+            StartCoroutine(RemoveAfterSeconds(3, notEnoughGemsText));
+        }
+    }
+
+
+    public void HideNotEnoughGemsText()
+    {
+        if (notEnoughGemsText != null)
+        {
+            notEnoughGemsText.SetActive(false);
+        }
+    }
+    IEnumerator RemoveAfterSeconds(int seconds, GameObject obj)
+    {
+            yield return new WaitForSeconds(seconds);
+            obj.SetActive(false);
+        
     }
 }

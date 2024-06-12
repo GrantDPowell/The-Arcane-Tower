@@ -20,26 +20,42 @@ public class ShopUIManager : MonoBehaviour
         // Clear existing items
         foreach (Transform child in spellCardList)
         {
-            Destroy(child.gameObject);
+            //child.gameObject.SetActive(false);
+            //Destroy(child.gameObject);
         }
 
         foreach (Transform child in playerCardList)
         {
-            Destroy(child.gameObject);
+            //child.gameObject.SetActive(false);
+            //Destroy(child.gameObject);
         }
 
         // Populate spell cards
+        int i = 0;
         foreach (var card in campManager.availableSpellCards)
         {
-            GameObject item = Instantiate(cardItemPrefab, spellCardList);
+            // place the card on each child of the spell card list
+            Transform[] childList = spellCardList.GetComponentsInChildren<Transform>();
+            Transform child = childList[i];          
+            
+            GameObject item = Instantiate(cardItemPrefab, child);
             item.GetComponent<CardItem>().Initialize(card, "Spell");
+        
+            i ++;
+        
         }
 
         // Populate player cards
+        i = 0;
         foreach (var card in campManager.availablePlayerCards)
         {
+            Transform[] childList = playerCardList.GetComponentsInChildren<Transform>();
+            Transform child = childList[i]; 
+
             GameObject item = Instantiate(cardItemPrefab, playerCardList);
             item.GetComponent<CardItem>().Initialize(card, "Player");
+
+            i ++;
         }
     }
 

@@ -29,7 +29,7 @@ MonoBehaviour:
   currentCharisma: 6
   currentHealth: 480
   maxHealth: 480
-  gems: 44
+  gems: 490
   coins: 57
   activePlayerCards:
   - {fileID: 11400000, guid: df01fccc46e7abf4989fb8e19157e978, type: 2}

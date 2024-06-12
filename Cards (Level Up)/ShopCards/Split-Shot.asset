@@ -23,6 +23,6 @@ MonoBehaviour:
   isHoming: 0
   splitCount: 1
   modifiedPrefab: {fileID: 0}
-  cost: 300
+  cost: 999
   prerequisite: {fileID: 0}
   incompatibleCards: []

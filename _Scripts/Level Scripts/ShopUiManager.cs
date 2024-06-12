@@ -10,9 +10,12 @@ public class ShopUIManager : MonoBehaviour
     public GameObject cardItemPrefab;
     public CampManager campManager;
 
+    private Transform[] childListSpells;
+    private Transform[] childListPlayer;
+
     private void Start()
     {
-        PopulateShop();
+        //PopulateShop();
     }
 
     public void PopulateShop()
@@ -21,7 +24,11 @@ public class ShopUIManager : MonoBehaviour
         foreach (Transform child in spellCardList)
         {
             //child.gameObject.SetActive(false);
+            // remove the old card item
+            
             //Destroy(child.gameObject);
+            // how do i remove the old card item?
+            
         }
 
         foreach (Transform child in playerCardList)
@@ -32,11 +39,12 @@ public class ShopUIManager : MonoBehaviour
 
         // Populate spell cards
         int i = 0;
+        Transform[] childListSpells = spellCardList.GetComponentsInChildren<Transform>();
         foreach (var card in campManager.availableSpellCards)
         {
             // place the card on each child of the spell card list
-            Transform[] childList = spellCardList.GetComponentsInChildren<Transform>();
-            Transform child = childList[i];          
+            
+            Transform child = childListSpells[i];          
             
             GameObject item = Instantiate(cardItemPrefab, child);
             item.GetComponent<CardItem>().Initialize(card, "Spell");
@@ -47,12 +55,13 @@ public class ShopUIManager : MonoBehaviour
 
         // Populate player cards
         i = 0;
+        Transform[] childListPlayer = playerCardList.GetComponentsInChildren<Transform>();
         foreach (var card in campManager.availablePlayerCards)
         {
-            Transform[] childList = playerCardList.GetComponentsInChildren<Transform>();
-            Transform child = childList[i]; 
+            
+            Transform child = childListPlayer[i]; 
 
-            GameObject item = Instantiate(cardItemPrefab, playerCardList);
+            GameObject item = Instantiate(cardItemPrefab, child);
             item.GetComponent<CardItem>().Initialize(card, "Player");
 
             i ++;

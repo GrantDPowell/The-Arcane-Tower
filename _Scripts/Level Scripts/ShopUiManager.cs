@@ -9,64 +9,45 @@ public class ShopUIManager : MonoBehaviour
     public Transform playerCardList;
     public GameObject cardItemPrefab;
     public CampManager campManager;
-
-    private Transform[] childListSpells;
-    private Transform[] childListPlayer;
+    public LoadoutUIManager loadoutUIManager; // Reference to LoadoutUIManager
 
     private void Start()
     {
-        //PopulateShop();
+        PopulateShop();
     }
 
     public void PopulateShop()
     {
         // Clear existing items
-        foreach (Transform child in spellCardList)
-        {
-            //child.gameObject.SetActive(false);
-            // remove the old card item
-            
-            //Destroy(child.gameObject);
-            // how do i remove the old card item?
-            
-        }
-
-        foreach (Transform child in playerCardList)
-        {
-            //child.gameObject.SetActive(false);
-            //Destroy(child.gameObject);
-            // how do i remove the old card item?
-        
-        }
+        ClearChildItems(spellCardList);
+        ClearChildItems(playerCardList);
 
         // Populate spell cards
         int i = 0;
-        Transform[] childListSpells = spellCardList.GetComponentsInChildren<Transform>();
+        Transform[] childListSpells = GetChildTransforms(spellCardList);
         foreach (var card in campManager.availableSpellCards)
         {
-            // place the card on each child of the spell card list
-            
-            Transform child = childListSpells[i];          
-            
-            GameObject item = Instantiate(cardItemPrefab, child);
-            item.GetComponent<CardItem>().Initialize(card, "Spell");
-        
-            i ++;
-        
+            if (CanDisplayCard(card) && i < childListSpells.Length)
+            {
+                Transform child = childListSpells[i];
+                GameObject item = Instantiate(cardItemPrefab, child);
+                item.GetComponent<CardItem>().Initialize(card, "Spell");
+                i++;
+            }
         }
 
         // Populate player cards
         i = 0;
-        Transform[] childListPlayer = playerCardList.GetComponentsInChildren<Transform>();
+        Transform[] childListPlayer = GetChildTransforms(playerCardList);
         foreach (var card in campManager.availablePlayerCards)
         {
-            
-            Transform child = childListPlayer[i]; 
-
-            GameObject item = Instantiate(cardItemPrefab, child);
-            item.GetComponent<CardItem>().Initialize(card, "Player");
-
-            i ++;
+            if (CanDisplayCard(card) && i < childListPlayer.Length)
+            {
+                Transform child = childListPlayer[i];
+                GameObject item = Instantiate(cardItemPrefab, child);
+                item.GetComponent<CardItem>().Initialize(card, "Player");
+                i++;
+            }
         }
     }
 
@@ -80,5 +61,84 @@ public class ShopUIManager : MonoBehaviour
     {
         campManager.BuyPlayerCard(card);
         PopulateShop();
+    }
+
+    private bool CanDisplayCard(SpellCard card)
+    {
+        if (card.prerequisite != null && !campManager.playerStats.savedLoadoutSpellCards.Contains(card.prerequisite))
+        {
+            return false;
+        }
+
+        if (campManager.playerStats.savedLoadoutSpellCards.Contains(card))
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    private bool CanDisplayCard(PlayerCard card)
+    {
+        if (card.prerequisite != null && !campManager.playerStats.savedLoadoutPlayerCards.Contains(card.prerequisite))
+        {
+            return false;
+        }
+
+        if (campManager.playerStats.savedLoadoutPlayerCards.Contains(card))
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    private void ClearChildItems(Transform parent)
+    {
+        foreach (Transform child in parent)
+        {
+            foreach (Transform grandChild in child)
+            {
+                Destroy(grandChild.gameObject);
+            }
+        }
+    }
+
+    private Transform[] GetChildTransforms(Transform parent)
+    {
+        List<Transform> childTransforms = new List<Transform>();
+        foreach (Transform child in parent)
+        {
+            if (child != parent)
+            {
+                childTransforms.Add(child);
+            }
+        }
+        return childTransforms.ToArray();
+    }
+
+    public void ShowLoadout()
+    {
+        shopPanel.SetActive(false);
+        loadoutUIManager.ShowLoadout();
+    }
+
+    public void HideLoadout()
+    {
+        loadoutUIManager.HideLoadout();
+        shopPanel.SetActive(true);
+    }
+
+    public void RefundSpellCard(SpellCard card)
+    {
+        Debug.Log("Refund Spell Card OLD IMPLEMENTATION");
+        //campManager.RefundSpellCard(card);
+        //loadoutUIManager.PopulateLoadout();
+    }
+
+    public void RefundPlayerCard(PlayerCard card)
+    {
+        //campManager.RefundPlayerCard(card);
+        //loadoutUIManager.PopulateLoadout();
     }
 }

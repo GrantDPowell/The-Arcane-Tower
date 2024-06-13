@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f4bb5a4b2b2304ea85a23be688a7dc, type: 3}
+  m_Name: Shop Int 5
+  m_EditorClassIdentifier: 
+  cardName: Intellect V
+  rarity: 0
+  addStrength: 0
+  addDexterity: 0
+  addConstitution: 0
+  addIntelligence: 0
+  addWisdom: 0
+  addCharisma: 0
+  multiplyStrength: 0
+  multiplyDexterity: 0
+  multiplyConstitution: 0
+  multiplyIntelligence: 0.1
+  multiplyWisdom: 0
+  multiplyCharisma: 0
+  cost: 500
+  prerequisite: {fileID: 11400000, guid: 38b35c92d42fb80408a01427fa884661, type: 2}
+  incompatibleCards: []

@@ -18,28 +18,20 @@ MonoBehaviour:
   baseIntelligence: 14
   baseWisdom: 6
   baseCharisma: 3
-  xpCurve: 70
-  experiencePoints: 129
-  level: 4
+  xpCurve: 26
+  experiencePoints: 84
+  level: 7
   currentStrength: 4
   currentDexterity: 6
   currentConstitution: 8
-  currentIntelligence: 20
+  currentIntelligence: 14
   currentWisdom: 6
   currentCharisma: 3
-  currentHealth: 62.79995
+  currentHealth: 80
   maxHealth: 80
-  gems: 537
+  gems: 5712
   coins: 57
-  activePlayerCards:
-  - {fileID: 11400000, guid: a060002fbe559ed488022ff207fb3a4f, type: 2}
-  - {fileID: 11400000, guid: 16e2b034b3b9c0d4a877c4bda88043fa, type: 2}
-  - {fileID: 11400000, guid: 36ee84921c39011409425784a0f942ad, type: 2}
-  - {fileID: 11400000, guid: 38b35c92d42fb80408a01427fa884661, type: 2}
+  activePlayerCards: []
   activeSpellCards: []
   savedLoadoutSpellCards: []
-  savedLoadoutPlayerCards:
-  - {fileID: 11400000, guid: a060002fbe559ed488022ff207fb3a4f, type: 2}
-  - {fileID: 11400000, guid: 16e2b034b3b9c0d4a877c4bda88043fa, type: 2}
-  - {fileID: 11400000, guid: 36ee84921c39011409425784a0f942ad, type: 2}
-  - {fileID: 11400000, guid: 38b35c92d42fb80408a01427fa884661, type: 2}
+  savedLoadoutPlayerCards: []

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: All 4
   rarity: 0
+  description: a description fo here
   addStrength: 2
   addDexterity: 2
   addConstitution: 2
@@ -26,5 +27,6 @@ MonoBehaviour:
   multiplyIntelligence: 0.1
   multiplyWisdom: 0.1
   multiplyCharisma: 0.1
+  cost: 0
   prerequisite: {fileID: 11400000, guid: e7bfdb4c0dfa81f4ab501fa899142c37, type: 2}
   incompatibleCards: []

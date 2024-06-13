@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: God Mode
   rarity: 3
+  description: a description fo here
   addStrength: 0
   addDexterity: 0
   addConstitution: 0

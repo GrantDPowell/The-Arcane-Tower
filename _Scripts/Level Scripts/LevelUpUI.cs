@@ -6,9 +6,10 @@ using UnityEngine.EventSystems;
 
 public class LevelUpUI : MonoBehaviour
 {
-    public Button option1Button;
-    public Button option2Button;
-    public Button option3Button;
+    public GameObject option1Slot;
+    public GameObject option2Slot;
+    public GameObject option3Slot;
+    public GameObject levelUpCardItemPrefab;
     public GameObject tooltip; // Reference to the tooltip GameObject
     public TextMeshProUGUI tooltipTextCurrent; // Reference to the TextMeshProUGUI component in the tooltip
     public TextMeshProUGUI tooltipTextProjected; // Reference to the TextMeshProUGUI component in the tooltip
@@ -21,15 +22,6 @@ public class LevelUpUI : MonoBehaviour
     {
         playerLevelSystem = FindObjectOfType<PlayerLevelSystem>();
         playerStats = playerLevelSystem.playerStats; // Get the PlayerStats from PlayerLevelSystem
-
-        option1Button.onClick.AddListener(() => ApplyCard(0));
-        option2Button.onClick.AddListener(() => ApplyCard(1));
-        option3Button.onClick.AddListener(() => ApplyCard(2));
-
-        // Add event listeners for hover
-        option1Button.gameObject.AddComponent<HoverHandler>().Init(ShowTooltip, HideTooltip, 0);
-        option2Button.gameObject.AddComponent<HoverHandler>().Init(ShowTooltip, HideTooltip, 1);
-        option3Button.gameObject.AddComponent<HoverHandler>().Init(ShowTooltip, HideTooltip, 2);
     }
 
     public void ShowOptions(List<object> options)
@@ -37,56 +29,37 @@ public class LevelUpUI : MonoBehaviour
         currentOptions = options;
         //Debug.Log("ShowOptions called with " + options.Count + " options.");
 
-        if (options.Count > 0)
-        {
-            option1Button.GetComponentInChildren<TextMeshProUGUI>().text = GetCardName(options[0]);
-            option1Button.gameObject.SetActive(true);
-        }
-        else
-        {
-            option1Button.gameObject.SetActive(false);
-        }
+        PopulateOptionSlot(option1Slot, options, 0);
+        PopulateOptionSlot(option2Slot, options, 1);
+        PopulateOptionSlot(option3Slot, options, 2);
+    }
 
-        if (options.Count > 1)
+    private void PopulateOptionSlot(GameObject slot, List<object> options, int index)
+    {
+        if (index < options.Count)
         {
-            option2Button.GetComponentInChildren<TextMeshProUGUI>().text = GetCardName(options[1]);
-            option2Button.gameObject.SetActive(true);
+            GameObject item = Instantiate(levelUpCardItemPrefab, slot.transform);
+            if (options[index] is PlayerCard playerCard)
+            {
+                item.GetComponent<LevelUpCardItem>().Initialize(playerCard, this);
+            }
+            else if (options[index] is SpellCard spellCard)
+            {
+                item.GetComponent<LevelUpCardItem>().Initialize(spellCard, this);
+            }
+            slot.SetActive(true);
         }
         else
         {
-            option2Button.gameObject.SetActive(false);
-        }
-
-        if (options.Count > 2)
-        {
-            option3Button.GetComponentInChildren<TextMeshProUGUI>().text = GetCardName(options[2]);
-            option3Button.gameObject.SetActive(true);
-        }
-        else
-        {
-            option3Button.gameObject.SetActive(false);
+            slot.SetActive(false);
         }
     }
 
-    private string GetCardName(object card)
+    public void ApplyCard(object card)
     {
-        if (card is PlayerCard playerCard)
+        if (card != null)
         {
-            return playerCard.cardName;
-        }
-        else if (card is SpellCard spellCard)
-        {
-            return spellCard.cardName;
-        }
-        return "Unknown Card";
-    }
-
-    private void ApplyCard(int index)
-    {
-        if (index < currentOptions.Count)
-        {
-            //Debug.Log("Applying card: " + GetCardName(currentOptions[index]));
-            playerLevelSystem.ApplyCard(currentOptions[index]);
+            playerLevelSystem.ApplyCard(card);
             Time.timeScale = 1f;
 
             // Hide the tooltip when a card is selected

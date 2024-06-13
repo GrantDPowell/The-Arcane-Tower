@@ -44,7 +44,7 @@ public class PlayerStats : ScriptableObject
 
     private void OnEnable()
     {
-        // ResetStats(); Removed to prevent resetting stats on every play
+        ResetStats(); //Removed to prevent resetting stats on every play
         // Instead, Stats are reset upon death
     }
 

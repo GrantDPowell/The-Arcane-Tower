@@ -7,6 +7,8 @@ public class SpellCard : ScriptableObject
     [Header("Card Info")]
     public string cardName;
     public Rarity rarity;
+    [Header("Card Description")]
+    public string description;
 
     [Header("Stat Additive Modifiers")]
     public float addDamage;

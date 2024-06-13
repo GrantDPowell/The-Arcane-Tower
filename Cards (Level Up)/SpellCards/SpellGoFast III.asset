@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Zooom III
   rarity: 2
+  description: a desc
   addDamage: 0.1
   addSpeed: 0.1
   addRange: 0.1
@@ -23,5 +24,6 @@ MonoBehaviour:
   isHoming: 0
   splitCount: 0
   modifiedPrefab: {fileID: 141290, guid: f48808dd723ddf047afed72966b4bad4, type: 3}
+  cost: 0
   prerequisite: {fileID: 11400000, guid: 149b741e73afefc4f88044f2281ea64a, type: 2}
   incompatibleCards: []

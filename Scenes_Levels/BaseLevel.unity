@@ -391,7 +391,7 @@ MonoBehaviour:
   - {fileID: 2807464185375669612, guid: 7053c4b2d87c9b348a54616e615a2225, type: 3}
   - {fileID: 2807464185375669612, guid: 8584fecfe5bb9e144927c95265025b60, type: 3}
   - {fileID: 2807464185375669612, guid: 34fd4b796f0a43f4c8f2db780258bdc3, type: 3}
-  goldPrefabs:
+  gemPrefabs:
   - {fileID: 43421471692445186, guid: 2071c22a40a8ce342a37b2e6c6baf879, type: 3}
   - {fileID: 43421471692445186, guid: 914d60597580bb04e94d019bd0812cfb, type: 3}
   - {fileID: 43421471692445186, guid: daf813d953ab9b54ba19197f62c52a19, type: 3}

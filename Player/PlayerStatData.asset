@@ -12,44 +12,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d92e8299bcd0644a80204c9b2e8475d, type: 3}
   m_Name: PlayerStatData
   m_EditorClassIdentifier: 
-  currentHealth: 54.399952
-  maxHealth: 80
-  gems: 88366
+  currentHealth: 148
+  maxHealth: 200
+  gems: 79066
   coins: 57
   xpCurve: 10
-  experiencePoints: 14
-  level: 2
-  currentStrength: 4
-  currentDexterity: 6
-  currentConstitution: 8
-  currentIntelligence: 14
-  currentWisdom: 8
-  currentCharisma: 3
-  additiveStrength: 0
-  additiveDexterity: 0
-  additiveConstitution: 0
-  additiveIntelligence: 0
-  additiveWisdom: 1
-  additiveCharisma: 0
-  multiplicativeStrength: 1
-  multiplicativeDexterity: 1
-  multiplicativeConstitution: 1
-  multiplicativeIntelligence: 1
-  multiplicativeWisdom: 1.1
-  multiplicativeCharisma: 1
+  experiencePoints: 0
+  level: 1
+  currentStrength: 14
+  currentDexterity: 17
+  currentConstitution: 20
+  currentIntelligence: 29
+  currentWisdom: 17
+  currentCharisma: 12
+  additiveStrength: 5
+  additiveDexterity: 5
+  additiveConstitution: 5
+  additiveIntelligence: 5
+  additiveWisdom: 5
+  additiveCharisma: 5
+  multiplicativeStrength: 1.5000001
+  multiplicativeDexterity: 1.5000001
+  multiplicativeConstitution: 1.5000001
+  multiplicativeIntelligence: 1.5000001
+  multiplicativeWisdom: 1.5000001
+  multiplicativeCharisma: 1.5000001
   activePlayerCards:
-  - {fileID: 11400000, guid: 744b1dc671aaa7b40bc8145e27636827, type: 2}
-  activeSpellCards: []
-  savedLoadoutSpellCards: []
-  savedLoadoutPlayerCards: []
+  - {fileID: 11400000, guid: a060002fbe559ed488022ff207fb3a4f, type: 2}
+  - {fileID: 11400000, guid: 16e2b034b3b9c0d4a877c4bda88043fa, type: 2}
+  - {fileID: 11400000, guid: 36ee84921c39011409425784a0f942ad, type: 2}
+  - {fileID: 11400000, guid: 38b35c92d42fb80408a01427fa884661, type: 2}
+  - {fileID: 11400000, guid: 5d1792e76189bef4a9e72794bffb3876, type: 2}
+  - {fileID: 11400000, guid: a82e8766bb7028647b7565299f60759a, type: 2}
+  - {fileID: 11400000, guid: e53c5b55ceb1c264f87c812283d49010, type: 2}
+  - {fileID: 11400000, guid: 07192800c8f958b46b7c51d7f3708684, type: 2}
+  - {fileID: 11400000, guid: 744ffc1678a1bfc44af7e4f4690215d7, type: 2}
+  - {fileID: 11400000, guid: 5492593dad8e57e49be94ac33bdb30b2, type: 2}
+  - {fileID: 11400000, guid: c69da82edacdb94448c9b686d765047b, type: 2}
+  - {fileID: 11400000, guid: 5f854a23b9e323940a0dbd93dd1a4fa3, type: 2}
+  - {fileID: 11400000, guid: 7355fa018a5f2cd4280af9a9b4a91956, type: 2}
+  - {fileID: 11400000, guid: 30dd42a692af71740aebf0dfef2cf672, type: 2}
+  - {fileID: 11400000, guid: 95a1180f020155f40b05e6412f58c9f9, type: 2}
+  - {fileID: 11400000, guid: 75898cffc1be810439629deea3ca3651, type: 2}
+  - {fileID: 11400000, guid: 4740653737dfb5c418be34716cf798dd, type: 2}
+  - {fileID: 11400000, guid: dbb2f99046eb7fe4f9aff71ef6fa9fb3, type: 2}
+  - {fileID: 11400000, guid: 8c7f685645fdb11439dc9bde344ecf23, type: 2}
+  - {fileID: 11400000, guid: f044f5f7c7f599f4a9abdbcd449b94cf, type: 2}
+  - {fileID: 11400000, guid: 5891d261b23cce94e839b1f9e4753307, type: 2}
+  - {fileID: 11400000, guid: 9d885ab2c85c76947aa04e9017fa1e65, type: 2}
+  - {fileID: 11400000, guid: 6c510ec481ba94a41a68d55402a1b2bc, type: 2}
+  - {fileID: 11400000, guid: 433a18d6ce7fee24c95cae65e4a62afd, type: 2}
+  - {fileID: 11400000, guid: 58decd0583d69ff479f9eb4e49508f1a, type: 2}
+  - {fileID: 11400000, guid: c32035c537f717e42b2a4d3e2e52b854, type: 2}
+  - {fileID: 11400000, guid: a2dffb1f1be35cb49bfc753da12644db, type: 2}
+  - {fileID: 11400000, guid: 6fe73acd9e74f784795e5cc88b0b5566, type: 2}
+  - {fileID: 11400000, guid: 24ec767e4c283ef4c801e82afced691b, type: 2}
+  - {fileID: 11400000, guid: a7f5704e9e04cd9458992856598c5ae7, type: 2}
+  activeSpellCards:
+  - {fileID: 11400000, guid: 96cc4a93a44c44248b7a26b6a4d58b76, type: 2}
+  savedLoadoutSpellCards:
+  - {fileID: 11400000, guid: 96cc4a93a44c44248b7a26b6a4d58b76, type: 2}
+  savedLoadoutPlayerCards:
+  - {fileID: 11400000, guid: a060002fbe559ed488022ff207fb3a4f, type: 2}
+  - {fileID: 11400000, guid: 16e2b034b3b9c0d4a877c4bda88043fa, type: 2}
+  - {fileID: 11400000, guid: 36ee84921c39011409425784a0f942ad, type: 2}
+  - {fileID: 11400000, guid: 38b35c92d42fb80408a01427fa884661, type: 2}
+  - {fileID: 11400000, guid: 5d1792e76189bef4a9e72794bffb3876, type: 2}
+  - {fileID: 11400000, guid: a82e8766bb7028647b7565299f60759a, type: 2}
+  - {fileID: 11400000, guid: e53c5b55ceb1c264f87c812283d49010, type: 2}
+  - {fileID: 11400000, guid: 07192800c8f958b46b7c51d7f3708684, type: 2}
+  - {fileID: 11400000, guid: 744ffc1678a1bfc44af7e4f4690215d7, type: 2}
+  - {fileID: 11400000, guid: 5492593dad8e57e49be94ac33bdb30b2, type: 2}
+  - {fileID: 11400000, guid: c69da82edacdb94448c9b686d765047b, type: 2}
+  - {fileID: 11400000, guid: 5f854a23b9e323940a0dbd93dd1a4fa3, type: 2}
+  - {fileID: 11400000, guid: 7355fa018a5f2cd4280af9a9b4a91956, type: 2}
+  - {fileID: 11400000, guid: 30dd42a692af71740aebf0dfef2cf672, type: 2}
+  - {fileID: 11400000, guid: 95a1180f020155f40b05e6412f58c9f9, type: 2}
+  - {fileID: 11400000, guid: 75898cffc1be810439629deea3ca3651, type: 2}
+  - {fileID: 11400000, guid: 4740653737dfb5c418be34716cf798dd, type: 2}
+  - {fileID: 11400000, guid: dbb2f99046eb7fe4f9aff71ef6fa9fb3, type: 2}
+  - {fileID: 11400000, guid: 8c7f685645fdb11439dc9bde344ecf23, type: 2}
+  - {fileID: 11400000, guid: f044f5f7c7f599f4a9abdbcd449b94cf, type: 2}
+  - {fileID: 11400000, guid: 5891d261b23cce94e839b1f9e4753307, type: 2}
+  - {fileID: 11400000, guid: 9d885ab2c85c76947aa04e9017fa1e65, type: 2}
+  - {fileID: 11400000, guid: 6c510ec481ba94a41a68d55402a1b2bc, type: 2}
+  - {fileID: 11400000, guid: 433a18d6ce7fee24c95cae65e4a62afd, type: 2}
+  - {fileID: 11400000, guid: 58decd0583d69ff479f9eb4e49508f1a, type: 2}
+  - {fileID: 11400000, guid: c32035c537f717e42b2a4d3e2e52b854, type: 2}
+  - {fileID: 11400000, guid: a2dffb1f1be35cb49bfc753da12644db, type: 2}
+  - {fileID: 11400000, guid: 6fe73acd9e74f784795e5cc88b0b5566, type: 2}
+  - {fileID: 11400000, guid: 24ec767e4c283ef4c801e82afced691b, type: 2}
+  - {fileID: 11400000, guid: a7f5704e9e04cd9458992856598c5ae7, type: 2}
   baseStrength: 4
   baseDexterity: 6
   baseConstitution: 8
   baseIntelligence: 14
   baseWisdom: 6
   baseCharisma: 3
-  totalMonstersKilled: 142
-  totalDamageDealt: 7014
+  totalMonstersKilled: 441
+  totalDamageDealt: 44290
   highestLevelReached: 1
   totalLevelsCompleted: 0
   totalGoldCollected: 0

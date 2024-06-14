@@ -197,7 +197,7 @@ public class EnemyAi : MonoBehaviour
         DropManager dropManager = FindObjectOfType<DropManager>();
         if (dropManager != null)
         {
-            dropManager.DropItems(transform.position, enemyStats.currentExperiencePoints, enemyStats.currentGoldDrop);
+            dropManager.DropItems(transform.position, enemyStats.currentExperiencePoints, enemyStats.currentGemDrop);
         }
         else
         {

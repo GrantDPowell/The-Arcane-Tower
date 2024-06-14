@@ -13,6 +13,7 @@ public class EnemyStats : ScriptableObject
 
     public int baseExperiencePoints; // base XP drop
     public int baseGoldDrop; // base gold drop
+    public int baseGemDrop; // base gem drop
 
     [Header("Scaling Factors")]
     public int strengthPerLevel;
@@ -23,6 +24,7 @@ public class EnemyStats : ScriptableObject
 
     public int experiencePointsPerLevel;
     public int goldDropPerLevel;
+    public int gemDropPerLevel;
 
     [Header("Current Stats")]
     public int currentStrength;
@@ -33,6 +35,7 @@ public class EnemyStats : ScriptableObject
 
     public int currentExperiencePoints;
     public int currentGoldDrop;
+    public int currentGemDrop;
 
     private void OnEnable()
     {
@@ -48,6 +51,7 @@ public class EnemyStats : ScriptableObject
         currentWisdom = baseWisdom;
         currentExperiencePoints = baseExperiencePoints;
         currentGoldDrop = baseGoldDrop;
+        currentGemDrop = baseGemDrop;
     }
 
     public void ScaleStats(int playerLevel)
@@ -59,6 +63,7 @@ public class EnemyStats : ScriptableObject
         currentWisdom = baseWisdom + (wisdomPerLevel * playerLevel);
         currentExperiencePoints = baseExperiencePoints + (experiencePointsPerLevel * playerLevel);
         currentGoldDrop = baseGoldDrop + (goldDropPerLevel * playerLevel);
+        currentGemDrop = baseGemDrop + (gemDropPerLevel * playerLevel);
     }
 
     public float GetDefense()
@@ -103,5 +108,9 @@ public class EnemyStats : ScriptableObject
     public int GetGoldDrop()
     {
         return currentGoldDrop;
+    }
+    public int GetGemDrop()
+    {
+        return currentGemDrop;
     }
 }

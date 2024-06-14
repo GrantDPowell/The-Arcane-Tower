@@ -17,16 +17,22 @@ MonoBehaviour:
   baseConstitution: 2
   baseIntelligence: 9
   baseWisdom: 6
-  baseExperiencePoints: 3
+  baseExperiencePoints: 12
+  baseGoldDrop: 24
+  baseGemDrop: 24
   strengthPerLevel: 1
   dexterityPerLevel: 1
   constitutionPerLevel: 1
   intelligencePerLevel: 2
   wisdomPerLevel: 1
   experiencePointsPerLevel: 2
-  currentStrength: 2
-  currentDexterity: 4
-  currentConstitution: 3
-  currentIntelligence: 9
-  currentWisdom: 5
-  currentExperiencePoints: 3
+  goldDropPerLevel: 1
+  gemDropPerLevel: 1
+  currentStrength: 4
+  currentDexterity: 6
+  currentConstitution: 4
+  currentIntelligence: 13
+  currentWisdom: 8
+  currentExperiencePoints: 16
+  currentGoldDrop: 26
+  currentGemDrop: 26

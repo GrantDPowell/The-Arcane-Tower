@@ -150,13 +150,13 @@ public class EnemyAi : MonoBehaviour
         Vector3 direction = (player.position - transform.position).normalized;
 
         GameObject magicMissile = Instantiate(projectile, transform.position + transform.forward, Quaternion.LookRotation(direction));
-        MagicMissile missileComponent = magicMissile.GetComponent<MagicMissile>();
+        EnemyMissile missileComponent = magicMissile.GetComponent<EnemyMissile>();
         if (missileComponent != null)
         {
             float damage = enemyStats.GetDamage();
             float speed = enemyStats.GetSpellSpeed(); // Use enemy's wisdom for spell speed
             float range = enemyStats.GetSpellRange(); // Use enemy's wisdom for spell range
-            missileComponent.Initialize((int)damage, speed, range, false, 0, projectile);
+            missileComponent.Initialize((int)damage, speed, range, projectile);
         }
     }
 
@@ -167,6 +167,14 @@ public class EnemyAi : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (player != null)
+        {
+            PlayerSystem playerComponent = player.GetComponent<PlayerSystem>();
+            if (playerComponent != null)
+            {
+                playerComponent.playerStats.totalDamageDealt += damage;
+            }
+        }
         float defense = enemyStats.GetDefense();
         float actualDamage = damage - defense;
         if (actualDamage < 0) actualDamage = 0;
@@ -195,6 +203,9 @@ public class EnemyAi : MonoBehaviour
             {
                 playerComponent.GainExperience(enemyStats.GetExperiencePoints());
                 //Debug.Log("Player gained " + enemyStats.GetExperiencePoints() + " experience points.");
+
+                playerComponent.playerStats.totalMonstersKilled++;
+
             }
             else
             {

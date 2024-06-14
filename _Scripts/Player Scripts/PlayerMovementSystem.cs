@@ -168,7 +168,7 @@ public class PlayerMovementSystem : MonoBehaviour
 
     private void UpdateMoveSpeed()
     {
-        moveSpeed = baseMoveSpeed + (playerStats.GetMoveSpeed() * 0.5f);
+        moveSpeed = baseMoveSpeed + playerStats.GetMoveSpeed();
         //Debug.Log($"Updated Move Speed: {moveSpeed}");
     }
 

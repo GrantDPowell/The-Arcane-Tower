@@ -153,7 +153,7 @@ MonoBehaviour:
   enemyStats: {fileID: 11400000, guid: d3fbfba53a3862549b0c98d22c95a8f2, type: 2}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 3
-  projectile: {fileID: 185858, guid: 95a944a4cb98c39469dfeb7ac33fffe1, type: 3}
+  projectile: {fileID: 7860665342348310127, guid: b1d692c415f769846bdd58dc8cdd27e7, type: 3}
   sightRange: 6
   attackRange: 3
   playerInSightRange: 0

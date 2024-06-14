@@ -1,16 +1,17 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "ScriptableObjects/PlayerStats", order = 1)]
 public class PlayerStats : ScriptableObject
 {
-    [Header("Base Stats")]
-    public int baseStrength;
-    public int baseDexterity;
-    public int baseConstitution;
-    public int baseIntelligence;
-    public int baseWisdom;
-    public int baseCharisma;
+    [Header("Health")]
+    public float currentHealth;
+    public float maxHealth;
+    
+    [Header("Gems/Coins")]
+    public int gems;
+    public int coins;
 
     [Header("Experience")]
     public int xpCurve;
@@ -24,14 +25,24 @@ public class PlayerStats : ScriptableObject
     public int currentIntelligence;
     public int currentWisdom;
     public int currentCharisma;
+
+    [Header("Current Additive/Multiplicative Stats")]
+    public int additiveStrength;
+    public int additiveDexterity;
+    public int additiveConstitution;
+    public int additiveIntelligence;
+    public int additiveWisdom;
+    public int additiveCharisma;
+
+    public float multiplicativeStrength;
+    public float multiplicativeDexterity;
+    public float multiplicativeConstitution;
+    public float multiplicativeIntelligence;
+    public float multiplicativeWisdom;
+    public float multiplicativeCharisma;
+
     
-    [Header("Health")]
-    public float currentHealth;
-    public float maxHealth;
-    
-    [Header("Gems/Coins")]
-    public int gems;
-    public int coins;
+
 
     [Header("Active Cards")]
     public List<PlayerCard> activePlayerCards = new List<PlayerCard>();
@@ -39,6 +50,15 @@ public class PlayerStats : ScriptableObject
     [Header("Saved Loadout")]
     public List<SpellCard> savedLoadoutSpellCards = new List<SpellCard>();
     public List<PlayerCard> savedLoadoutPlayerCards = new List<PlayerCard>();
+
+
+    [Header("Base Stats")]
+    public int baseStrength;
+    public int baseDexterity;
+    public int baseConstitution;
+    public int baseIntelligence;
+    public int baseWisdom;
+    public int baseCharisma;
 
     [Header("High Score Stats")]
     public int totalMonstersKilled;
@@ -49,6 +69,8 @@ public class PlayerStats : ScriptableObject
 
     public int totalGoldCollected;
     public int totalGemsCollected;
+
+
 
     
 
@@ -80,6 +102,19 @@ public class PlayerStats : ScriptableObject
         {
             highestLevelReached = level;
         }
+        additiveStrength = 0;
+        additiveDexterity = 0;
+        additiveConstitution = 0;
+        additiveIntelligence = 0;
+        additiveWisdom = 0;
+        additiveCharisma = 0;
+
+        multiplicativeStrength = 1.0f;
+        multiplicativeDexterity = 1.0f;
+        multiplicativeConstitution = 1.0f;
+        multiplicativeIntelligence = 1.0f;
+        multiplicativeWisdom = 1.0f;
+        multiplicativeCharisma = 1.0f;
     }
 
     public int ExperienceThreshold()
@@ -102,19 +137,20 @@ public class PlayerStats : ScriptableObject
 
     public void ApplyCards()
     {
-        int additiveStrength = 0;
-        int additiveDexterity = 0;
-        int additiveConstitution = 0;
-        int additiveIntelligence = 0;
-        int additiveWisdom = 0;
-        int additiveCharisma = 0;
+        additiveStrength = 0;
+        additiveDexterity = 0;
+        additiveConstitution = 0;
+        additiveIntelligence = 0;
+        additiveWisdom = 0;
+        additiveCharisma = 0;
 
-        float multiplicativeStrength = 1.0f;
-        float multiplicativeDexterity = 1.0f;
-        float multiplicativeConstitution = 1.0f;
-        float multiplicativeIntelligence = 1.0f;
-        float multiplicativeWisdom = 1.0f;
-        float multiplicativeCharisma = 1.0f;
+        multiplicativeStrength = 1.0f;
+        multiplicativeDexterity = 1.0f;
+        multiplicativeConstitution = 1.0f;
+        multiplicativeIntelligence = 1.0f;
+        multiplicativeWisdom = 1.0f;
+        multiplicativeCharisma = 1.0f;
+
 
         foreach (var card in activePlayerCards)
         {
@@ -185,11 +221,17 @@ public class PlayerStats : ScriptableObject
     public void MultiplyCharisma(float multiplier) => currentCharisma = Mathf.RoundToInt(currentCharisma * multiplier);
 
     // Methods to get modified stats
+    // These methods are used to calculate the player's stats in other scripts
+    // Used for Balance and consistency
+    // TODO: Add more stats as needed
     public float GetDefense() => currentStrength * 0.05f;
-    public float GetMoveSpeed() => currentDexterity * 0.1f;
+    public float GetMoveSpeed() => currentDexterity * 0.05f;
     public float GetAttackCooldown() => currentDexterity * 0.05f;
     public float GetMagicDamage() => currentIntelligence * 0.1f;
     public float GetSpellSpeed() => currentWisdom * 0.15f;
     public float GetSpellRange() => currentWisdom * 1f;
     public float GetShopDiscount() => currentCharisma * 0.01f;
+
+    // pickup rang, base is 1.5 scales with dexterity and charisma
+    public float GetPickupRange() => Mathf.Min(1.5f, currentDexterity * currentCharisma * 0.01f);
 }

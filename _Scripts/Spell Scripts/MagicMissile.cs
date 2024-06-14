@@ -62,14 +62,6 @@ public class MagicMissile : MonoBehaviour
                 enemy.TakeDamage(damage);
             }
         }
-        else if (collision.gameObject.CompareTag("Player"))
-        {
-            PlayerHealthSystem playerHealth = collision.gameObject.GetComponent<PlayerHealthSystem>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damage);
-            }
-        }
         else if (collision.gameObject.CompareTag("Spell"))
         {
             // phase through other spells

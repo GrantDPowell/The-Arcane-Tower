@@ -29,9 +29,17 @@ MonoBehaviour:
   currentCharisma: 3
   currentHealth: 80
   maxHealth: 80
-  gems: 88366
+  gems: 88066
   coins: 57
   activePlayerCards: []
   activeSpellCards: []
   savedLoadoutSpellCards: []
-  savedLoadoutPlayerCards: []
+  savedLoadoutPlayerCards:
+  - {fileID: 11400000, guid: 75898cffc1be810439629deea3ca3651, type: 2}
+  - {fileID: 11400000, guid: 4740653737dfb5c418be34716cf798dd, type: 2}
+  totalMonstersKilled: 128
+  totalDamageDealt: 4524
+  highestLevelReached: 1
+  totalLevelsCompleted: 0
+  totalGoldCollected: 0
+  totalGemsCollected: 0

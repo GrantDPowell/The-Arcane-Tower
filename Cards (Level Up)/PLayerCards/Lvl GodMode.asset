@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: God Mode
   rarity: 3
   description: a description fo here
+  cardSprite: {fileID: 21300000, guid: 1d855f84403c6e44e9c4c77d611fd428, type: 3}
   addStrength: 0
   addDexterity: 0
   addConstitution: 0

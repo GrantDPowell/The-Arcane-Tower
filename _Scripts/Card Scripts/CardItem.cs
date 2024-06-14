@@ -8,6 +8,8 @@ public class CardItem : MonoBehaviour
     public TMP_Text cardCostText;
     public Button buyButton;
 
+    public Image cardImage;
+
     private SpellCard spellCard;
     private PlayerCard playerCard;
     private ShopUIManager shopUIManager;
@@ -17,6 +19,7 @@ public class CardItem : MonoBehaviour
         spellCard = card;
         cardNameText.text = card.cardName;
         cardCostText.text = card.cost.ToString();
+        cardImage.sprite = card.cardSprite;
         buyButton.onClick.AddListener(() => BuyCard(cardType));
         shopUIManager = FindObjectOfType<ShopUIManager>();
     }
@@ -26,6 +29,7 @@ public class CardItem : MonoBehaviour
         playerCard = card;
         cardNameText.text = card.cardName;
         cardCostText.text = card.cost.ToString();
+        cardImage.sprite = card.cardSprite;
         buyButton.onClick.AddListener(() => BuyCard(cardType));
         shopUIManager = FindObjectOfType<ShopUIManager>();
     }

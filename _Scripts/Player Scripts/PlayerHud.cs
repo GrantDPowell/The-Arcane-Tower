@@ -6,6 +6,8 @@ public class PlayerHud : MonoBehaviour
 {
     public PlayerStats playerStats;
 
+    public GameObject hudPanel;
+
     public TMP_Text strengthText;
     public TMP_Text dexterityText;
     public TMP_Text constitutionText;
@@ -18,9 +20,17 @@ public class PlayerHud : MonoBehaviour
 
     public TMP_Text levelText;
 
+    public TMP_Text gemTxt;
+
+    public bool showHud = true;
+
     private void Update()
     {
-        UpdateStatsDisplay();
+        if (showHud)
+        {
+            UpdateStatsDisplay();
+        }
+        
     }
 
     private void UpdateStatsDisplay()
@@ -41,6 +51,21 @@ public class PlayerHud : MonoBehaviour
             xpSlider.value = playerStats.experiencePoints;
 
             levelText.text = "Level: " + playerStats.level;
+
+            gemTxt.text = "Gems: " + playerStats.gems;
         }
+    }
+
+    public void HudOn()
+    {
+        showHud = true;
+        hudPanel.SetActive(true);
+
+    }
+
+    public void HudOff()
+    {
+        showHud = false;
+        hudPanel.SetActive(false);
     }
 }

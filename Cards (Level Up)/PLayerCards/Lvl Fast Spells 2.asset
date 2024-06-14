@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Fast Spells II
   rarity: 0
   description: a description fo here
+  cardSprite: {fileID: 21300000, guid: 61255f63ba0124743bb75b268a781fe6, type: 3}
   addStrength: 0
   addDexterity: 0
   addConstitution: 0

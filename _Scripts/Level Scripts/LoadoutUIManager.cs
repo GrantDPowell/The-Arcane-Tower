@@ -13,6 +13,8 @@ public class LoadoutUIManager : MonoBehaviour
     public Button previousPageButton;
     public TMP_Text pageNumberText; // Use TMP_Text instead of Text
 
+    public TMP_Text gemTxt; // Use TMP_Text instead of Text
+
     private int currentPage = 0;
 
     private void Start()
@@ -150,6 +152,8 @@ public class LoadoutUIManager : MonoBehaviour
 
         previousPageButton.interactable = currentPage > 0;
         nextPageButton.interactable = currentPage < loadoutPageParents.Length - 1;
+
+        gemTxt.text = "Gems: " + campManager.playerStats.gems;
     }
 
     private bool CanRefundSpellCard(SpellCard card)

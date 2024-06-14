@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Intellect I
   rarity: 0
+  description: 
+  cardSprite: {fileID: 21300000, guid: 05a87a4c54293e042bc6b4cc408e2681, type: 3}
   addStrength: 0
   addDexterity: 0
   addConstitution: 0
-  addIntelligence: 0
+  addIntelligence: 1
   addWisdom: 0
   addCharisma: 0
   multiplyStrength: 0

@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: All 1
   rarity: 0
   description: a description fo here
+  cardSprite: {fileID: 21300000, guid: 6e36cf2d349a95e47ad73b0281aae95f, type: 3}
   addStrength: 2
   addDexterity: 2
   addConstitution: 2

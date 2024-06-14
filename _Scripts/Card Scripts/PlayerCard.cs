@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+//using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerCard", menuName = "ScriptableObjects/PlayerCard", order = 1)]
@@ -9,6 +10,8 @@ public class PlayerCard : ScriptableObject
     public Rarity rarity; // Add rarity
     [Header("Card Description")]
     public string description;
+    [Header("Card Image")]
+    public Sprite cardSprite;
 
     [Header("Stat Additive Modifiers")]
     public int addStrength;

@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Zooom  I
   rarity: 0
   description: a desc
+  cardSprite: {fileID: 21300000, guid: 935dc946f666f93429ac6fb7c8cb55a6, type: 3}
   addDamage: 0.1
   addSpeed: 0.1
   addRange: 0.1

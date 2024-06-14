@@ -8,6 +8,8 @@ public class LevelUpCardItem : MonoBehaviour
     public TMP_Text cardDescription; // Optional: If you want to show the card cost
     public Button selectButton;
 
+    public Image cardImage;
+
     private SpellCard spellCard;
     private PlayerCard playerCard;
     private LevelUpUI levelUpUI;
@@ -17,6 +19,7 @@ public class LevelUpCardItem : MonoBehaviour
         spellCard = card;
         cardNameText.text = card.cardName;
         cardDescription.text = card.description.ToString(); // Optional
+        cardImage.sprite = card.cardSprite;
         selectButton.onClick.AddListener(() => SelectCard());
         this.levelUpUI = levelUpUI;
     }
@@ -26,6 +29,7 @@ public class LevelUpCardItem : MonoBehaviour
         playerCard = card;
         cardNameText.text = card.cardName;
         cardDescription.text = card.description.ToString(); // Optional
+        cardImage.sprite = card.cardSprite;
         selectButton.onClick.AddListener(() => SelectCard());
         this.levelUpUI = levelUpUI;
     }

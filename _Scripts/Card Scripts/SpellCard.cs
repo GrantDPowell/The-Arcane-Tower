@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+//using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SpellCard", menuName = "ScriptableObjects/SpellCard", order = 1)]
@@ -9,6 +10,8 @@ public class SpellCard : ScriptableObject
     public Rarity rarity;
     [Header("Card Description")]
     public string description;
+    [Header("Card Image")]
+    public Sprite cardSprite;
 
     [Header("Stat Additive Modifiers")]
     public float addDamage;

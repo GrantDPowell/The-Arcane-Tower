@@ -8,6 +8,8 @@ public class CardItemForLoadout : MonoBehaviour
     public TMP_Text cardCostText;
     public Button refundButton;
 
+    public Image cardImage;
+
     private SpellCard spellCard;
     private PlayerCard playerCard;
     private LoadoutUIManager loadoutUIManager;
@@ -17,6 +19,7 @@ public class CardItemForLoadout : MonoBehaviour
         spellCard = card;
         cardNameText.text = card.cardName;
         cardCostText.text = card.cost.ToString();
+        cardImage.sprite = card.cardSprite;
         refundButton.onClick.AddListener(() => RefundCard(cardType));
         loadoutUIManager = FindObjectOfType<LoadoutUIManager>();
     }
@@ -26,6 +29,7 @@ public class CardItemForLoadout : MonoBehaviour
         playerCard = card;
         cardNameText.text = card.cardName;
         cardCostText.text = card.cost.ToString();
+        cardImage.sprite = card.cardSprite;
         refundButton.onClick.AddListener(() => RefundCard(cardType));
         loadoutUIManager = FindObjectOfType<LoadoutUIManager>();
     }

@@ -11,6 +11,7 @@ public class ShopUIManager : MonoBehaviour
     public CampManager campManager;
     public LoadoutUIManager loadoutUIManager; // Reference to LoadoutUIManager
 
+
     private void Start()
     {
         PopulateShop();

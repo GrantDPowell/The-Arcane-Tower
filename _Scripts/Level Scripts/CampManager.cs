@@ -62,6 +62,8 @@ public class CampManager : MonoBehaviour
         {
             shopUI.SetActive(true);
             shopUI.GetComponent<ShopUIManager>().PopulateShop();
+            var playerHud = playerInstance.GetComponentInChildren<PlayerHud>();
+            playerHud.HudOff();
         }
     }
 
@@ -70,6 +72,18 @@ public class CampManager : MonoBehaviour
         if (shopUI != null)
         {
             shopUI.SetActive(false);
+            var playerHud = playerInstance.GetComponentInChildren<PlayerHud>();
+            playerHud.HudOn();
+        }
+    }
+
+    public void CloseShopToGoToLoadout()
+    {
+        if (shopUI != null)
+        {
+            shopUI.SetActive(false);
+            var playerHud = playerInstance.GetComponentInChildren<PlayerHud>();
+
         }
     }
 
@@ -79,7 +93,7 @@ public class CampManager : MonoBehaviour
         {
             loadoutPanel.SetActive(true);
             loadoutPanel.GetComponent<LoadoutUIManager>().PopulateLoadout();
-            CloseShop();
+            CloseShopToGoToLoadout();
         }
     }
 

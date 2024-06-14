@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Charisma V
   rarity: 0
   description: 
-  cardSprite: {fileID: 21300000, guid: d6fab785244cbf34685fe6ad24821929, type: 3}
+  cardSprite: {fileID: 21300000, guid: ff0297aa526bf1446b2c1721e52d2ea6, type: 3}
   addStrength: 0
   addDexterity: 0
   addConstitution: 0

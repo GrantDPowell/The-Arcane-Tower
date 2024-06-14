@@ -24,18 +24,14 @@ MonoBehaviour:
   currentStrength: 4
   currentDexterity: 6
   currentConstitution: 8
-  currentIntelligence: 19
+  currentIntelligence: 14
   currentWisdom: 6
   currentCharisma: 3
   currentHealth: 80
   maxHealth: 80
-  gems: 1600
+  gems: 88366
   coins: 57
-  activePlayerCards:
-  - {fileID: 11400000, guid: a060002fbe559ed488022ff207fb3a4f, type: 2}
-  - {fileID: 11400000, guid: 16e2b034b3b9c0d4a877c4bda88043fa, type: 2}
+  activePlayerCards: []
   activeSpellCards: []
   savedLoadoutSpellCards: []
-  savedLoadoutPlayerCards:
-  - {fileID: 11400000, guid: a060002fbe559ed488022ff207fb3a4f, type: 2}
-  - {fileID: 11400000, guid: 16e2b034b3b9c0d4a877c4bda88043fa, type: 2}
+  savedLoadoutPlayerCards: []

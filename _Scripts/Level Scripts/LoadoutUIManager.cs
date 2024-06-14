@@ -13,6 +13,7 @@ public class LoadoutUIManager : MonoBehaviour
     public Button previousPageButton;
     public TMP_Text pageNumberText; // Use TMP_Text instead of Text
 
+    public PlayerStats playerStats;
     public TMP_Text gemTxt; // Use TMP_Text instead of Text
 
     private int currentPage = 0;
@@ -25,6 +26,7 @@ public class LoadoutUIManager : MonoBehaviour
 
     public void PopulateLoadout()
     {
+        gemTxt.text = "Gems: " + playerStats.gems;
         // Clear existing items in loadout pages
         foreach (var pageParent in loadoutPageParents)
         {
@@ -36,8 +38,9 @@ public class LoadoutUIManager : MonoBehaviour
         List<PlayerCard> sortedPlayerCards = new List<PlayerCard>(campManager.playerStats.savedLoadoutPlayerCards);
 
         // Sort cards to place cards with prerequisites last
-        sortedSpellCards.Sort((a, b) => (b.prerequisite != null).CompareTo(a.prerequisite != null));
-        sortedPlayerCards.Sort((a, b) => (b.prerequisite != null).CompareTo(a.prerequisite != null));
+        //sortedSpellCards.Sort((a, b) => (b.prerequisite != null).CompareTo(a.prerequisite != null));
+        //sortedPlayerCards.Sort((a, b) => (b.prerequisite != null).CompareTo(a.prerequisite != null));
+        // OLD CODE
 
         
 
@@ -153,7 +156,7 @@ public class LoadoutUIManager : MonoBehaviour
         previousPageButton.interactable = currentPage > 0;
         nextPageButton.interactable = currentPage < loadoutPageParents.Length - 1;
 
-        gemTxt.text = "Gems: " + campManager.playerStats.gems;
+        //gemTxt.text = "Gems: " + campManager.playerStats.gems;
     }
 
     private bool CanRefundSpellCard(SpellCard card)

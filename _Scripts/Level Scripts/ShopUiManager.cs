@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,9 @@ public class ShopUIManager : MonoBehaviour
     public CampManager campManager;
     public LoadoutUIManager loadoutUIManager; // Reference to LoadoutUIManager
 
+    public PlayerStats playerStats;
+    public TMP_Text gemTxt;
+
 
     private void Start()
     {
@@ -19,6 +23,7 @@ public class ShopUIManager : MonoBehaviour
 
     public void PopulateShop()
     {
+        gemTxt.text = "Gems: " + playerStats.gems;
         // Clear existing items
         ClearChildItems(spellCardList);
         ClearChildItems(playerCardList);

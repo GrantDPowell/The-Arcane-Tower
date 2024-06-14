@@ -40,6 +40,16 @@ public class PlayerStats : ScriptableObject
     public List<SpellCard> savedLoadoutSpellCards = new List<SpellCard>();
     public List<PlayerCard> savedLoadoutPlayerCards = new List<PlayerCard>();
 
+    [Header("High Score Stats")]
+    public int totalMonstersKilled;
+    public float totalDamageDealt;
+
+    public int highestLevelReached;
+    public int totalLevelsCompleted;
+
+    public int totalGoldCollected;
+    public int totalGemsCollected;
+
     
 
     private void OnEnable()
@@ -65,6 +75,11 @@ public class PlayerStats : ScriptableObject
 
         activePlayerCards.Clear();
         activeSpellCards.Clear();
+
+        if (level > highestLevelReached)
+        {
+            highestLevelReached = level;
+        }
     }
 
     public int ExperienceThreshold()

@@ -233,5 +233,5 @@ public class PlayerStats : ScriptableObject
     public float GetShopDiscount() => currentCharisma * 0.01f;
 
     // pickup rang, base is 1.5 scales with dexterity and charisma
-    public float GetPickupRange() => Mathf.Min(1.5f, currentDexterity * currentCharisma * 0.01f);
+    public float GetPickupRange() => Mathf.Max(1.5f, currentDexterity * currentCharisma * 0.01f);
 }

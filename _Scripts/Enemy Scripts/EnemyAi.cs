@@ -189,7 +189,20 @@ public class EnemyAi : MonoBehaviour
     private void DestroyEnemy()
     {
         NotifyPlayerOfDeath();
+        DropItems();    
         Destroy(gameObject);
+    }
+    private void DropItems()
+    {
+        DropManager dropManager = FindObjectOfType<DropManager>();
+        if (dropManager != null)
+        {
+            dropManager.DropItems(transform.position, enemyStats.currentExperiencePoints, enemyStats.currentGoldDrop);
+        }
+        else
+        {
+            Debug.LogError("DropManager not found in the scene.");
+        }
     }
 
     private void NotifyPlayerOfDeath()
@@ -201,7 +214,7 @@ public class EnemyAi : MonoBehaviour
             PlayerSystem playerComponent = player.GetComponent<PlayerSystem>();
             if (playerComponent != null)
             {
-                playerComponent.GainExperience(enemyStats.GetExperiencePoints());
+                //playerComponent.GainExperience(enemyStats.GetExperiencePoints());
                 //Debug.Log("Player gained " + enemyStats.GetExperiencePoints() + " experience points.");
 
                 playerComponent.playerStats.totalMonstersKilled++;

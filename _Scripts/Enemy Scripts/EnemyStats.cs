@@ -10,7 +10,9 @@ public class EnemyStats : ScriptableObject
     public int baseConstitution; // health
     public int baseIntelligence; // damage
     public int baseWisdom; // spell speed and range
+
     public int baseExperiencePoints; // base XP drop
+    public int baseGoldDrop; // base gold drop
 
     [Header("Scaling Factors")]
     public int strengthPerLevel;
@@ -18,7 +20,9 @@ public class EnemyStats : ScriptableObject
     public int constitutionPerLevel;
     public int intelligencePerLevel;
     public int wisdomPerLevel;
+
     public int experiencePointsPerLevel;
+    public int goldDropPerLevel;
 
     [Header("Current Stats")]
     public int currentStrength;
@@ -26,7 +30,9 @@ public class EnemyStats : ScriptableObject
     public int currentConstitution;
     public int currentIntelligence;
     public int currentWisdom;
+
     public int currentExperiencePoints;
+    public int currentGoldDrop;
 
     private void OnEnable()
     {
@@ -41,6 +47,7 @@ public class EnemyStats : ScriptableObject
         currentIntelligence = baseIntelligence;
         currentWisdom = baseWisdom;
         currentExperiencePoints = baseExperiencePoints;
+        currentGoldDrop = baseGoldDrop;
     }
 
     public void ScaleStats(int playerLevel)
@@ -51,6 +58,7 @@ public class EnemyStats : ScriptableObject
         currentIntelligence = baseIntelligence + (intelligencePerLevel * playerLevel);
         currentWisdom = baseWisdom + (wisdomPerLevel * playerLevel);
         currentExperiencePoints = baseExperiencePoints + (experiencePointsPerLevel * playerLevel);
+        currentGoldDrop = baseGoldDrop + (goldDropPerLevel * playerLevel);
     }
 
     public float GetDefense()
@@ -91,5 +99,9 @@ public class EnemyStats : ScriptableObject
     public int GetExperiencePoints()
     {
         return currentExperiencePoints;
+    }
+    public int GetGoldDrop()
+    {
+        return currentGoldDrop;
     }
 }

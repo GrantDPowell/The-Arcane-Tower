@@ -12,33 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d92e8299bcd0644a80204c9b2e8475d, type: 3}
   m_Name: PlayerStatData
   m_EditorClassIdentifier: 
+  currentHealth: 54.399952
+  maxHealth: 80
+  gems: 88366
+  coins: 57
+  xpCurve: 10
+  experiencePoints: 14
+  level: 2
+  currentStrength: 4
+  currentDexterity: 6
+  currentConstitution: 8
+  currentIntelligence: 14
+  currentWisdom: 8
+  currentCharisma: 3
+  additiveStrength: 0
+  additiveDexterity: 0
+  additiveConstitution: 0
+  additiveIntelligence: 0
+  additiveWisdom: 1
+  additiveCharisma: 0
+  multiplicativeStrength: 1
+  multiplicativeDexterity: 1
+  multiplicativeConstitution: 1
+  multiplicativeIntelligence: 1
+  multiplicativeWisdom: 1.1
+  multiplicativeCharisma: 1
+  activePlayerCards:
+  - {fileID: 11400000, guid: 744b1dc671aaa7b40bc8145e27636827, type: 2}
+  activeSpellCards: []
+  savedLoadoutSpellCards: []
+  savedLoadoutPlayerCards: []
   baseStrength: 4
   baseDexterity: 6
   baseConstitution: 8
   baseIntelligence: 14
   baseWisdom: 6
   baseCharisma: 3
-  xpCurve: 10
-  experiencePoints: 0
-  level: 1
-  currentStrength: 4
-  currentDexterity: 6
-  currentConstitution: 8
-  currentIntelligence: 14
-  currentWisdom: 6
-  currentCharisma: 3
-  currentHealth: 80
-  maxHealth: 80
-  gems: 88066
-  coins: 57
-  activePlayerCards: []
-  activeSpellCards: []
-  savedLoadoutSpellCards: []
-  savedLoadoutPlayerCards:
-  - {fileID: 11400000, guid: 75898cffc1be810439629deea3ca3651, type: 2}
-  - {fileID: 11400000, guid: 4740653737dfb5c418be34716cf798dd, type: 2}
-  totalMonstersKilled: 128
-  totalDamageDealt: 4524
+  totalMonstersKilled: 142
+  totalDamageDealt: 7014
   highestLevelReached: 1
   totalLevelsCompleted: 0
   totalGoldCollected: 0

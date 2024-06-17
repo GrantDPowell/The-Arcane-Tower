@@ -33,6 +33,8 @@ public class SpellSystem : MonoBehaviour
         }
     }
 
+
+    // p[las]
     public void RemoveCard(SpellCard card)
     {
         if (playerStats.activeSpellCards.Contains(card))

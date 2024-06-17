@@ -158,3 +158,4 @@ MonoBehaviour:
   attackRange: 3
   playerInSightRange: 0
   playerInAttackRange: 0
+  damageText: {fileID: 1156565629501635213, guid: b170a1068fec03943974e5f7c9e6e574, type: 3}

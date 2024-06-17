@@ -4,13 +4,16 @@ using UnityEngine;
 public class DropManager : MonoBehaviour
 {
     public List<GameObject> xpPrefabs; // Prefabs for XP drops
-    public List<GameObject> gemPrefabs; // Prefabs for gold drops
+    public List<GameObject> gemPrefabs; // Prefabs for gem drops
+    public List<GameObject> goldPrefabs; // Prefabs for gold drops
 
-    public void DropItems(Vector3 position, int xpAmount, int goldAmount)
+    public void DropItems(Vector3 position, int xpAmount, int gemAmount, int goldAmount)
     {
         DropSpecificItems(position, xpAmount, xpPrefabs);
-        DropSpecificItems(position, goldAmount, gemPrefabs);
+        DropSpecificItems(position, gemAmount, gemPrefabs);
+        DropSpecificItems(position, goldAmount, goldPrefabs);
     }
+  
 
     private void DropSpecificItems(Vector3 position, int amount, List<GameObject> prefabs)
     {

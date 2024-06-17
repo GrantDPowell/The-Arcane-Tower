@@ -15,7 +15,6 @@ public class ShopUIManager : MonoBehaviour
     public PlayerStats playerStats;
     public TMP_Text gemTxt;
 
-
     private void Start()
     {
         PopulateShop();
@@ -23,6 +22,7 @@ public class ShopUIManager : MonoBehaviour
 
     public void PopulateShop()
     {
+        RemoveDuplicateCards();
         gemTxt.text = "Gems: " + playerStats.gems;
         // Clear existing items
         ClearChildItems(spellCardList);
@@ -54,6 +54,43 @@ public class ShopUIManager : MonoBehaviour
                 item.GetComponent<CardItem>().Initialize(card, "Player");
                 i++;
             }
+        }
+    }
+
+    private void RemoveDuplicateCards()
+    {
+        // Create temporary lists to store cards to be removed
+        List<SpellCard> spellCardsToRemove = new List<SpellCard>();
+        List<PlayerCard> playerCardsToRemove = new List<PlayerCard>();
+
+        // Check for duplicate spell cards
+        foreach (var card in campManager.availableSpellCards)
+        {
+            if (campManager.playerStats.savedLoadoutSpellCards.Contains(card))
+            {
+                spellCardsToRemove.Add(card);
+            }
+        }
+
+        // Remove duplicate spell cards
+        foreach (var card in spellCardsToRemove)
+        {
+            campManager.availableSpellCards.Remove(card);
+        }
+
+        // Check for duplicate player cards
+        foreach (var card in campManager.availablePlayerCards)
+        {
+            if (campManager.playerStats.savedLoadoutPlayerCards.Contains(card))
+            {
+                playerCardsToRemove.Add(card);
+            }
+        }
+
+        // Remove duplicate player cards
+        foreach (var card in playerCardsToRemove)
+        {
+            campManager.availablePlayerCards.Remove(card);
         }
     }
 

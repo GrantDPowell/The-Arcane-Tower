@@ -18,21 +18,21 @@ MonoBehaviour:
   baseIntelligence: 9
   baseWisdom: 6
   baseExperiencePoints: 34
-  baseGoldDrop: 66
-  baseGemDrop: 66
+  baseGoldDrop: 16
+  baseGemDrop: 6
   strengthPerLevel: 2
   dexterityPerLevel: 2
   constitutionPerLevel: 3
   intelligencePerLevel: 4
   wisdomPerLevel: 2
-  experiencePointsPerLevel: 20
-  goldDropPerLevel: 6
-  gemDropPerLevel: 1
-  currentStrength: 6
-  currentDexterity: 8
-  currentConstitution: 8
-  currentIntelligence: 17
-  currentWisdom: 10
-  currentExperiencePoints: 74
-  currentGoldDrop: 78
-  currentGemDrop: 68
+  experiencePointsPerLevel: 8
+  goldDropPerLevel: 5
+  gemDropPerLevel: 2
+  currentStrength: 32
+  currentDexterity: 34
+  currentConstitution: 47
+  currentIntelligence: 69
+  currentWisdom: 36
+  currentExperiencePoints: 154
+  currentGoldDrop: 91
+  currentGemDrop: 36

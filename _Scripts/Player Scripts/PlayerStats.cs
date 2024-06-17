@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "ScriptableObjects/PlayerStats", order = 1)]
 public class PlayerStats : ScriptableObject
@@ -115,6 +116,13 @@ public class PlayerStats : ScriptableObject
         multiplicativeIntelligence = 1.0f;
         multiplicativeWisdom = 1.0f;
         multiplicativeCharisma = 1.0f;
+
+        // handle coin reset
+        // it only needs to reset when the player dies
+        // coins are used to buy items during the runs
+        // gems are used to buy cards
+        // coins are not used to buy cards
+        // will add later for now they aDD UP
     }
 
     public int ExperienceThreshold()
@@ -181,10 +189,16 @@ public class PlayerStats : ScriptableObject
         {
             currentHealth = maxHealth;
         }
-        if (currentHealth <= maxHealth * 0.6f)
+        else if (currentHealth <= maxHealth * 0.6f)
         {
             currentHealth += maxHealth * 0.2f;
         }
+        // see if active scene is camp and if so make sure health is full
+        else if (SceneManager.GetActiveScene().name == "Camp")
+        {
+            currentHealth = maxHealth;
+        }
+
     }
 
     public bool CanActivatePlayerCard(PlayerCard card)
@@ -224,14 +238,19 @@ public class PlayerStats : ScriptableObject
     // These methods are used to calculate the player's stats in other scripts
     // Used for Balance and consistency
     // TODO: Add more stats as needed
+    // TODO: make each stat have a public multiplier so that i can adjust the scaling of each stat from the cards
+
     public float GetDefense() => currentStrength * 0.05f;
+
     public float GetMoveSpeed() => currentDexterity * 0.05f;
-    public float GetAttackCooldown() => currentDexterity * 0.05f;
+
+    public float GetAttackCooldown() => currentDexterity * 0.005f;
     public float GetMagicDamage() => currentIntelligence * 0.1f;
     public float GetSpellSpeed() => currentWisdom * 0.15f;
     public float GetSpellRange() => currentWisdom * 1f;
+
     public float GetShopDiscount() => currentCharisma * 0.01f;
 
     // pickup rang, base is 1.5 scales with dexterity and charisma
-    public float GetPickupRange() => Mathf.Max(1.5f, currentDexterity * currentCharisma * 0.01f);
+    public float GetPickupRange() => Mathf.Min(Mathf.Max(1.5f, currentDexterity * currentCharisma * 0.01f),10f);
 }

@@ -16,11 +16,14 @@ public class PlayerHud : MonoBehaviour
     public TMP_Text charismaText;
 
     public Slider healthSlider;
+    public TMP_Text healthText;
     public Slider xpSlider;
+    public TMP_Text expText;
 
     public TMP_Text levelText;
 
     public TMP_Text gemTxt;
+    public TMP_Text coinTxt;
 
     public bool showHud = true;
 
@@ -53,6 +56,10 @@ public class PlayerHud : MonoBehaviour
             levelText.text = "Level: " + playerStats.level;
 
             gemTxt.text = "Gems: " + playerStats.gems;
+
+            healthText.text = playerStats.currentHealth + "/" + playerStats.maxHealth;
+            expText.text = playerStats.experiencePoints + "/" + playerStats.ExperienceThreshold();
+            coinTxt.text = "Coins: " + playerStats.coins;
         }
     }
 

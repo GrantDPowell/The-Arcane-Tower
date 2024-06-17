@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAi : MonoBehaviour
@@ -23,6 +24,9 @@ public class EnemyAi : MonoBehaviour
     private bool seenPlayer = false;
     private PlayerSystem playerComponent;
     private int playerLevel;
+
+    public GameObject damageText;
+
 
     private void Awake()
     {
@@ -167,6 +171,9 @@ public class EnemyAi : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        DamageIndicator indicator = Instantiate(damageText, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
+        indicator.SetDamageText(damage);
+
         if (player != null)
         {
             PlayerSystem playerComponent = player.GetComponent<PlayerSystem>();
@@ -186,6 +193,7 @@ public class EnemyAi : MonoBehaviour
         if (health <= 0) Invoke(nameof(DestroyEnemy), 0.1f);
     }
 
+
     private void DestroyEnemy()
     {
         NotifyPlayerOfDeath();
@@ -197,7 +205,7 @@ public class EnemyAi : MonoBehaviour
         DropManager dropManager = FindObjectOfType<DropManager>();
         if (dropManager != null)
         {
-            dropManager.DropItems(transform.position, enemyStats.currentExperiencePoints, enemyStats.currentGemDrop);
+            dropManager.DropItems(transform.position, enemyStats.currentExperiencePoints, enemyStats.currentGemDrop, enemyStats.currentGoldDrop);
         }
         else
         {

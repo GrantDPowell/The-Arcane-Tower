@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerAttackSystem : MonoBehaviour
 {
@@ -52,13 +53,13 @@ public class PlayerAttackSystem : MonoBehaviour
 
     void Update()
     {
-        if (isAttacking && Time.time >= nextAttackTime)
+        if (isAttacking && Time.time >= nextAttackTime && SceneManager.GetActiveScene().name != "Camp")
         {
             bool isJumping = animator.GetBool("isJumping");
             if (!isJumping)
             {
                 Attack();
-                nextAttackTime = Time.time + spellSystem.baseSpell.attackCooldown; // Set the next attack time
+                nextAttackTime = Time.time + spellSystem.baseSpell.attackCooldown - playerStats.GetAttackCooldown(); // Set the next attack time
             }
         }
     }
@@ -94,7 +95,7 @@ public class PlayerAttackSystem : MonoBehaviour
     IEnumerator ShootMagicMissile(Vector3 direction)
     {
         // Wait for a small delay to sync the missile firing with the animation
-        yield return new WaitForSeconds(spellSystem.baseSpell.attackCooldown / 2); // Adjust the timing if necessary
+        yield return new WaitForSeconds(spellSystem.baseSpell.attackCooldown - playerStats.GetAttackCooldown() / 2); // Adjust the timing if necessary
 
         // Apply loadout and active cards before shooting the missile
         // OLD AND DEPRECIATED CALL -->  playerLoadoutSystem.ApplyLoadoutModifiers(spellSystem);
